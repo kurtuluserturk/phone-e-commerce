@@ -8,10 +8,9 @@ const Modal = () => {
     const { isModalOpen, modalProduct, closeModal, openModal } = useGlobalContext();
     const { img, title, price } = modalProduct;
 
-    if (!isModalOpen === true) {    // An issue is here
+    if (!isModalOpen) {
         return null
     } else {
-        console.log('modal false')
         return (
             <ModalContainer>
                 <div className="container">
@@ -22,12 +21,12 @@ const Modal = () => {
                             <h5>{title}</h5>
                             <h5 className="text-muted">price: ${price}</h5>
                             <Link to='/'>
-                                <ButtonContainer onClick={() => closeModal()}>
+                                <ButtonContainer onClick={closeModal}>
                                     store
                                 </ButtonContainer>
                             </Link>
                             <Link to='/cart'>
-                                <ButtonContainer cart onClick={() => closeModal()}>
+                                <ButtonContainer cart onClick={closeModal}>
                                     go to cart
                                 </ButtonContainer>
                             </Link>

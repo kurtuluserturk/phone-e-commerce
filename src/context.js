@@ -7,7 +7,7 @@ const ProductProvider = ({ children }) => {
     const [products, setProducts] = useState(storeProducts)
     const [productDetail, setProductDetail] = useState(detailProduct)
     const [cart, setCart] = useState([])
-    const [isModelOpen, setIsModelOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [modalProduct, setModalProduct] = useState(detailProduct)
 
 
@@ -58,12 +58,12 @@ const ProductProvider = ({ children }) => {
     const openModal = (id) => {
         const product = getItem(id)
         setModalProduct(product)
-        setIsModelOpen(true)
+        setIsModalOpen(true)
         console.log('openModal')
     }
 
     const closeModal = () => {
-        setIsModelOpen(false)
+        setIsModalOpen(false)
         console.log('closeModal')
     }
 
@@ -74,7 +74,7 @@ const ProductProvider = ({ children }) => {
                 productDetail,
                 handleProductDetail,
                 addToCart,
-                isModelOpen,
+                isModalOpen,
                 modalProduct,
                 openModal,
                 closeModal
