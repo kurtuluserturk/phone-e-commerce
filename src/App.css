@@ -1,0 +1,44 @@
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow: #ffa400;
+  --lightYellow: #ffc720;
+  --darkGreen: #005a00;
+  --lightGreen: #4da64d;
+}
+
+/* 
+  Fonts were copied from google fonts 
+   If we don't use !important, bootstrap will be 
+   used by defult.  
+*/
+body {
+  font-family: "Oswald", sans-serif !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+}
+
+/*
+  I don't need to !important because this is
+  my class not bootstrap class. 
+*/
+.text-title {
+  font-family: "Permanent Marker", cursive;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+.text-yellow {
+  color: var(--mainYellow);
+}
+.text-blue {
+  color: var(--mainBlue);
+}
+.text-bright {
+  color: var(--lightBlue);
+}
+
+.navbar {
+  justify-content: flex-start !important;
+}
