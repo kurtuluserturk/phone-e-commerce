@@ -5,7 +5,7 @@ import { ButtonContainer } from './ButtonStyle'
 import { Link } from 'react-router-dom'
 
 const Modal = () => {
-    const { isModalOpen, modalProduct, closeModal, openModal } = useGlobalContext();
+    const { isModalOpen, modalProduct, closeModal } = useGlobalContext();
     const { img, title, price } = modalProduct;
 
     if (!isModalOpen) {

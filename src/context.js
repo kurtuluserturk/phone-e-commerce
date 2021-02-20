@@ -9,6 +9,7 @@ const ProductProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [modalProduct, setModalProduct] = useState(detailProduct)
+    const [state, setState] = useState({ cartSubTotal: 0, cartTax: 0, cartTotal: 0 })
 
 
     /* // refactoring : state'leri toplama
@@ -67,17 +68,35 @@ const ProductProvider = ({ children }) => {
         console.log('closeModal')
     }
 
+    const increaseItem = (id) => {
+        console.log('incresae')
+    }
+    const decreaseItem = (id) => {
+        console.log('decresae')
+    }
+    const removeItem = (id) => {
+        console.log('removed')
+    }
+    const clearCart = () => {
+        console.log('cleared')
+    }
+
     return (
         <ProductContext.Provider
             value={{
                 products,
                 productDetail,
                 handleProductDetail,
+                cart,
                 addToCart,
                 isModalOpen,
                 modalProduct,
                 openModal,
-                closeModal
+                closeModal,
+                increaseItem,
+                decreaseItem,
+                removeItem,
+                clearCart
             }}
         >
             {children}
