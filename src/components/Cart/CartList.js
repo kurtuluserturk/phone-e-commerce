@@ -1,12 +1,16 @@
 import React from 'react'
 import CartItem from './CartItem'
+import { useGlobalContext } from '../../context'
 
-const CartList = ({ value }) => {
-    console.log(value)
+const CartList = ({ value }) => {   // We get value from Cart.js as props
+    const { cart } = useGlobalContext()
+    // console.log(cart)
+
     return (
-        <div>
-            hello from cartlist
-            <CartItem />
+        <div className="container-fluid">
+            {cart.map(item => {
+                return <CartItem key={item.id} item={item} value={value} />    // We send the functions as props
+            })}
         </div>
     )
 }

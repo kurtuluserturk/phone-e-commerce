@@ -6,14 +6,14 @@ import CartList from './CartList'
 import { useGlobalContext } from '../../context'
 
 const Cart = () => {
-    const { cart, children } = useGlobalContext()
+    const { cart, ...value } = useGlobalContext()
 
     if (cart.length > 0) {
         return (
             <>
                 <Title name="your" title="cart" />
-                <CartColumns value={children} />
-                <CartList />
+                <CartColumns />
+                <CartList value={value} />  {/* We get value from context.js */}
             </>
         )
     } else {

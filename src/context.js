@@ -37,8 +37,7 @@ const ProductProvider = ({ children }) => {
         product.total = price
         setProducts(tempProducts)
         setCart(cart => [...cart, product])     // I think there is a problem. ???
-        console.log(product)
-        console.log(cart)   // ilk add to cart işleminde consola ürünü vermiyor.
+        // console.log(cart)   // ilk add to cart işleminde consola ürünü vermiyor.
     }
 
     // Check these codes
@@ -60,12 +59,10 @@ const ProductProvider = ({ children }) => {
         const product = getItem(id)
         setModalProduct(product)
         setIsModalOpen(true)
-        console.log('openModal')
     }
 
     const closeModal = () => {
         setIsModalOpen(false)
-        console.log('closeModal')
     }
 
     const increaseItem = (id) => {
