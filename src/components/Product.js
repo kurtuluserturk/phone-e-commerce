@@ -28,7 +28,6 @@ const Product = ({ product }) => {
                     >
                         {inCart ? (
                             <p className="text-capitalize mb-0" disabled>
-                                {" "}
                                 in cart
                             </p>
                         ) : (

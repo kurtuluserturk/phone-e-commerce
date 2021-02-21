@@ -48,6 +48,7 @@ const ProductProvider = ({ children }) => {
             tempProducts = [...tempProducts, singleProductProperties]    // we get previous properties of tempProducts then add singleProduct
         })
         return { products: tempProducts }
+        //setProducts(tempProducts)
     }
 
     const openModal = (id) => {
@@ -60,16 +61,44 @@ const ProductProvider = ({ children }) => {
     }
 
     const increaseItem = (id) => {
-        console.log('incresae')
+        let tempCart = [...cart]
+        const selectedProduct = tempCart.find(item => item.id == id)
+        const index = tempCart.indexOf(selectedProduct)
+        const product = tempCart[index]
+        product.count = product.count + 1
+        product.total = product.count * product.price
+        setCart([...tempCart])
     }
     const decreaseItem = (id) => {
+        let tempCart = [...cart]
+        const selectedProduct = tempCart.find(item => item.id == id)
+        const index = tempCart.indexOf(selectedProduct)
+        const product = tempCart[index]
+        product.count = product.count - 1
+        if (product.count === 0) {
+            removeItem(id)
+        } else {
+            product.total = product.count * product.price
+            setCart([...tempCart])
+        }
+
         console.log('decresae')
     }
     const removeItem = (id) => {
-        console.log('removed')
+        let tempProducts = [...products]
+        const index = tempProducts.indexOf(getItem(id))
+        let removedProduct = tempProducts[index]
+        removedProduct.inCart = false
+        removedProduct.count = 0
+        removedProduct.total = 0
+        setCart(cart.filter(item => item.id !== id))
+        setProducts([...tempProducts])
     }
-    const clearCart = () => {
+
+    const clearCart = () => {   // the problem is here
         setCart([])
+        console.log('clear cart runned')
+
     }
 
     const addTotals = () => {
@@ -79,18 +108,12 @@ const ProductProvider = ({ children }) => {
         const tax = parseFloat(tempTax.toFixed(2))
         const total = subTotal + tax
         setState({
-            // ...state,
+            ...state,
             cartSubTotal: subTotal,
             cartTax: tax,
             cartTotal: total
         })
     }
-
-    /* useEffect(() => {   // we can think this like componentDidMount()
-        setProduct()
-        console.log('setProduct çalıştı')
-        // console.log('get product runned')
-    }, [setProduct, [cart]]) */
 
     useEffect(() => {
         addTotals()
