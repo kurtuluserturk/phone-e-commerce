@@ -26,7 +26,6 @@ const ProductProvider = ({ children }) => {
         const product = getItem(id)
         setProductDetail(product)
     }
-
     const addToCart = (id) => {
         let tempProducts = [...products]    // tempProducts is our array
         const index = tempProducts.indexOf(getItem(id))    // We get the index in tempProducts array using getItem(id)
