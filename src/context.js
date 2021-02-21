@@ -41,7 +41,7 @@ const ProductProvider = ({ children }) => {
     }
 
     // Check these codes
-    const getProduct = () => {  // to copy the properties of each object in storeProducts array
+    const setProduct = () => {  // to copy the properties of each object in storeProducts array
         let tempProducts = []
         storeProducts.map(product => {
             const singleProductProperties = { ...product }    // to copy the properties of one product
@@ -50,17 +50,11 @@ const ProductProvider = ({ children }) => {
         return { products: tempProducts }
     }
 
-    useEffect(() => {   // we can think this like componentDidMount()
-        getProduct()
-        // console.log('get product runned')
-    }, [getProduct])
-
     const openModal = (id) => {
         const product = getItem(id)
         setModalProduct(product)
         setIsModalOpen(true)
     }
-
     const closeModal = () => {
         setIsModalOpen(false)
     }
@@ -75,8 +69,34 @@ const ProductProvider = ({ children }) => {
         console.log('removed')
     }
     const clearCart = () => {
-        console.log('cleared')
+        setCart([])
     }
+
+    const addTotals = () => {
+        let subTotal = 0
+        cart.map(item => (subTotal += item.total))
+        const tempTax = subTotal * 0.1  // we choose 0.1 to calculate tax
+        const tax = parseFloat(tempTax.toFixed(2))
+        const total = subTotal + tax
+        setState({
+            // ...state,
+            cartSubTotal: subTotal,
+            cartTax: tax,
+            cartTotal: total
+        })
+    }
+
+    /* useEffect(() => {   // we can think this like componentDidMount()
+        setProduct()
+        console.log('setProduct çalıştı')
+        // console.log('get product runned')
+    }, [setProduct, [cart]]) */
+
+    useEffect(() => {
+        addTotals()
+        setProduct()
+        console.log('addTotals, setProduct runned ')
+    }, [cart])
 
     return (
         <ProductContext.Provider
@@ -93,7 +113,8 @@ const ProductProvider = ({ children }) => {
                 increaseItem,
                 decreaseItem,
                 removeItem,
-                clearCart
+                clearCart,
+                ...state    // we take cartSubTotal, cartTax, cartTotal
             }}
         >
             {children}
@@ -106,3 +127,6 @@ export const useGlobalContext = () => {
 }
 
 export { ProductContext, ProductProvider }
+
+
+

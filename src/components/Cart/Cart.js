@@ -3,6 +3,7 @@ import Title from '../Title'
 import CartColumns from './CartColumns'
 import EmptyCart from './EmptyCart'
 import CartList from './CartList'
+import CartTotals from './CartTotals'
 import { useGlobalContext } from '../../context'
 
 const Cart = () => {
@@ -14,6 +15,7 @@ const Cart = () => {
                 <Title name="your" title="cart" />
                 <CartColumns />
                 <CartList value={value} />  {/* We get value from context.js */}
+                <CartTotals value={value} />
             </>
         )
     } else {
