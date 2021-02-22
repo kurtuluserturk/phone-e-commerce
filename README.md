@@ -1,6 +1,6 @@
 Website link of the projet : https://mobilephone-e-commerce.netlify.app/
 
-![Alt text](/relative/path/to/phone-e-commerce-cart-image.jpg?raw=true "Optional Title")
+![Alt text](/relative/path/to/phone-e-commerce-cart-image.png?raw=true "Optional Title")
 
 # Getting Started with Create React App
 
