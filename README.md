@@ -1,6 +1,6 @@
 Website link of the projet : https://mobilephone-e-commerce.netlify.app/
 
-![Alt text](/relative/path/to/E:\29.09.2020\My Projects\Web\Github\readme-imagesraw=true "Optional Title")
+![Alt text](E:\29.09.2020\My Projects\Web\Github\readme-imagesraw=true "Optional Title")
 
 # Getting Started with Create React App
 
