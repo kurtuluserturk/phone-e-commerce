@@ -1,6 +1,4 @@
 Website link of the projet : https://mobilephone-e-commerce.netlify.app/
-
-![alt text](https://drive.google.com/file/d/1Lbwae1j3aJgdbq37bwXU0jweyKOXxOZF/view?usp=sharing)
  
 # Getting Started with Create React App
 
