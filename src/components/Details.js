@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 import { ButtonContainer } from './ButtonStyle'
 
 const Details = () => {
-    const { productDetail, addToCart, openModal } = useGlobalContext()
-    const { id, title, img, price, company, info, inCart } = productDetail
+    const { productDetail, addToCart, openModal, cart } = useGlobalContext()
+    const { id, title, img, price, company, info } = productDetail
+
+    const inCart = cart.find((item) => item.id === id);
 
     return (
         <div className="container py-5">

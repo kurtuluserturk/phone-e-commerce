@@ -4,7 +4,6 @@ import { useGlobalContext } from '../../context'
 
 const CartList = ({ value }) => {   // We get value from Cart.js as props
     const { cart } = useGlobalContext()
-    // console.log(cart)
 
     return (
         <div className="container-fluid">

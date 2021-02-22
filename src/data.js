@@ -12,7 +12,7 @@ export const storeProducts = [
   {
     id: 2,
     title: "Samsung S7",
-    img: "img/product-2.png",
+    img: "/img/product-2.png",
     price: 899,
     company: "SAMSUNG",
     info:
@@ -22,7 +22,7 @@ export const storeProducts = [
   {
     id: 3,
     title: "HTC 10 - Black",
-    img: "img/product-3.png",
+    img: "/img/product-3.png",
     price: 699,
     company: "htc",
     info:
@@ -32,7 +32,7 @@ export const storeProducts = [
   {
     id: 4,
     title: "HTC 10 - White",
-    img: "img/product-4.png",
+    img: "/img/product-4.png",
     price: 599,
     company: "htc",
     info:
@@ -42,7 +42,7 @@ export const storeProducts = [
   {
     id: 5,
     title: "HTC Desire 626s",
-    img: "img/product-5.png",
+    img: "/img/product-5.png",
     price: 499,
     company: "htc",
     info:
@@ -52,7 +52,7 @@ export const storeProducts = [
   {
     id: 6,
     title: "Vintage Iphone",
-    img: "img/product-6.png",
+    img: "/img/product-6.png",
     price: 699,
     company: "apple",
     info:
@@ -62,7 +62,7 @@ export const storeProducts = [
   {
     id: 7,
     title: "Iphone 7",
-    img: "img/product-7.png",
+    img: "/img/product-7.png",
     price: 799,
     company: "apple",
     info:
@@ -72,7 +72,7 @@ export const storeProducts = [
   {
     id: 8,
     title: "Smashed Iphone",
-    img: "img/product-8.png",
+    img: "/img/product-8.png",
     price: 99,
     company: "apple",
     info:
